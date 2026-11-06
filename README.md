@@ -6,22 +6,41 @@ Skills pra equipe do Bruno Medeiros usar no **Claude Code** e no **Codex**.
 |---|---|
 | `copy-viral-brnrmedeiros` | Roteiros de Reels do Instagram **@brnrmedeiros**: YAP, tela dividida (cards do Hermes), Reels 7s e o plano da Se Posicione. Escreve, corrige e dá nota em copy. **Não é pro @sistemabrn.** |
 
-> Repositório privado. Não compartilhe, não copie pra fora da equipe.
+---
+
+## Instalar sem terminal (Mac)
+
+1. Abra o **Claude Code** ou o **Codex**.
+2. Copie o prompt abaixo, cole lá e envie.
+3. Quando ele pedir permissão pra rodar um comando ou mexer numa pasta, aprove.
+
+```text
+Instala pra mim a skill "copy-viral-brnrmedeiros" da equipe BRN neste Mac, no Claude Code e no Codex. Eu não uso terminal: roda tudo tu mesmo e me explica em português simples o que tá fazendo.
+
+Repositório: https://github.com/brnagencia-tech/skills-equipe-brn
+
+1. Confere com xcode-select -p se o git do Mac tá instalado. Se não estiver, pula direto pro passo 4.
+2. Se a pasta ~/skills-equipe-brn já existe, entra nela e roda git pull. Se não existe, roda: git clone https://github.com/brnagencia-tech/skills-equipe-brn.git ~/skills-equipe-brn
+3. Roda: bash ~/skills-equipe-brn/install.sh e vai pro passo 5.
+4. Se não tiver git ou se der erro: baixa https://github.com/brnagencia-tech/skills-equipe-brn/archive/refs/heads/main.zip com curl, descompacta numa pasta temporária e copia a pasta skills/copy-viral-brnrmedeiros pra ~/.claude/skills/ e pra ~/.agents/skills/. Cria as pastas se não existirem e substitui se já tiver uma versão antiga.
+5. Confere se existem ~/.claude/skills/copy-viral-brnrmedeiros/SKILL.md e ~/.agents/skills/copy-viral-brnrmedeiros/SKILL.md e me diz pra fechar e abrir de novo o Claude Code e o Codex.
+
+Não mexe em nenhuma outra skill nem em outras pastas.
+```
+
+4. Feche e abra de novo o Claude Code e o Codex.
+
+**Pra atualizar depois, cole o mesmo prompt de novo.**
 
 ---
 
-## Instalar no Mac (ou Linux)
-
-1. Abra o **Terminal**.
-2. Copie e cole estes 3 comandos, um de cada vez:
+## Instalar pelo Terminal (Mac ou Linux)
 
 ```bash
 git clone https://github.com/brnagencia-tech/skills-equipe-brn.git ~/skills-equipe-brn
 cd ~/skills-equipe-brn
 bash install.sh
 ```
-
-3. Feche e abra de novo o Claude Code e o Codex.
 
 O `install.sh` liga a skill nos dois de uma vez:
 
@@ -30,7 +49,7 @@ O `install.sh` liga a skill nos dois de uma vez:
 
 **Não apague nem mova a pasta `~/skills-equipe-brn`**: a skill instalada aponta pra ela.
 
-Se o `git clone` pedir login, entre com a tua conta do GitHub (o Bruno precisa ter te adicionado no repositório antes).
+Pra atualizar: `cd ~/skills-equipe-brn && git pull`
 
 ## Instalar no Windows
 
@@ -48,7 +67,7 @@ No Windows, pra atualizar, baixe de novo e substitua as duas pastas.
 
 **Claude Code:** digite `/copy-viral-brnrmedeiros` e o pedido. Ou só peça normalmente que ele usa a skill sozinho.
 
-**Codex:** digite `$copy-viral-brnrmedeiros` e o pedido, ou escolha a skill em `/skills`.
+**Codex:** digite `$copy-viral-brnrmedeiros` e o pedido, ou escolha a skill em `/skills`. O Codex precisa estar atualizado (as versões antigas não leem a pasta `~/.agents/skills`).
 
 Exemplos de pedido:
 
@@ -59,22 +78,10 @@ Exemplos de pedido:
 
 O que a skill não souber da vida do Bruno ela marca como `[CONFERIR: ...]`. Esses pontos precisam de resposta dele antes de gravar.
 
----
-
-## Atualizar (Mac/Linux)
-
-```bash
-cd ~/skills-equipe-brn && git pull
-```
-
-Pronto, as duas ferramentas já pegam a versão nova. Se não aparecer, feche e abra de novo.
-
 ## Mudanças na skill
 
-Não edite a skill na tua máquina (o `git pull` vai dar conflito). Achou algo pra melhorar? Manda pro Bruno.
+Não edite a skill na tua máquina (a atualização vai sobrescrever). Achou algo pra melhorar? Manda pro Bruno.
 
-## Desinstalar (Mac/Linux)
+## Desinstalar
 
-```bash
-rm ~/.claude/skills/copy-viral-brnrmedeiros ~/.agents/skills/copy-viral-brnrmedeiros
-```
+Peça pro Claude Code ou pro Codex: `Apaga a skill copy-viral-brnrmedeiros de ~/.claude/skills e de ~/.agents/skills.`
